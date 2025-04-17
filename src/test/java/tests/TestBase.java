@@ -11,11 +11,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-
 public class TestBase {
+
     @BeforeAll
-    static void beforeAll() {
+    static void setup() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 5000;
 

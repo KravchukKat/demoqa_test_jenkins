@@ -2,7 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import pages.components.ResultModelDialogComponent;
+import pages.components.ResultModalDialogComponent;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    private SelenideElement firstNameInput = $("#firstName"),
+    private final SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
             genterWrapper = $("#genterWrapper"),
@@ -26,8 +26,8 @@ public class RegistrationPage {
             modalDialog = $(".modal-dialog"),
             exampleModalSizesTitleLg = $("#example-modal-sizes-title-lg");
 
-    CalendarComponent calendarComponent = new CalendarComponent();
-    ResultModelDialogComponent resultModelDialogComponent = new ResultModelDialogComponent();
+    private final CalendarComponent calendarComponent = new CalendarComponent();
+    private final ResultModalDialogComponent resultModalDialogComponent = new ResultModalDialogComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -136,7 +136,7 @@ public class RegistrationPage {
 
     public RegistrationPage checkResultValue(String key, String value) {
 
-        resultModelDialogComponent.checkResultValue(key, value);
+        resultModalDialogComponent.checkResultValue(key, value);
 
         return this;
     }

@@ -11,10 +11,12 @@ import static tests.TestData.*;
 public class RegistrationWithRandomUtilsTests extends TestBase {
     private final RegistrationPage registrationPage = new RegistrationPage();
 
+
     @Test
     @Tag("demoqa")
     @Owner("KravchukK")
     void successfulRegistrationTest() {
+
         step("Open page", () -> {
             registrationPage.openPage()
                     .removeBanners();
@@ -55,25 +57,31 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
     @Owner("KravchukK")
     void successRegistrationRequiredFieldsTest() {
 
-        registrationPage.openPage()
-                .removeBanners()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setUserEmail(userEmail)
-                .setGenter(genter)
-                .setUserNumber(userNumber)
-                .setBirthDay(day, month, year)
-                .setHobbies(hobbies)
-                .setAddress(address)
-                .submit()
-                .checkFormAppears()
-                .checkResultValue("Student Name", firstName + " " + lastName)
-                .checkResultValue("Student Email", userEmail)
-                .checkResultValue("Gender", genter)
-                .checkResultValue("Mobile", userNumber)
-                .checkResultValue("Date of Birth", day + month + year)
-                .checkResultValue("Hobbies", hobbies)
-                .checkResultValue("Address", address);
+        step("Open page", () -> {
+            registrationPage.openPage()
+                    .removeBanners();
+        });
+        step("Fill form", () -> {
+            registrationPage.setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setUserEmail(userEmail)
+                    .setGenter(genter)
+                    .setUserNumber(userNumber)
+                    .setBirthDay(day, month, year)
+                    .setHobbies(hobbies)
+                    .setAddress(address)
+                    .submit();
+        });
+        step("Verify results", () -> {
+            registrationPage.checkFormAppears()
+                    .checkResultValue("Student Name", firstName + " " + lastName)
+                    .checkResultValue("Student Email", userEmail)
+                    .checkResultValue("Gender", genter)
+                    .checkResultValue("Mobile", userNumber)
+                    .checkResultValue("Date of Birth", day + month + year)
+                    .checkResultValue("Hobbies", hobbies)
+                    .checkResultValue("Address", address);
+        });
     }
 
     @Test
@@ -81,12 +89,18 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
     @Owner("KravchukK")
     void unsuccessfulRegistrationWithoutRequiredFieldsTest() {
 
-        registrationPage.openPage()
-                .removeBanners()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .submit()
-                .checkFormNotAppears();
+        step("Open page", () -> {
+            registrationPage.openPage()
+                    .removeBanners();
+        });
+        step("Fill form", () -> {
+            registrationPage.setFirstName(firstName)
+                    .setLastName(lastName)
+                    .submit();
+        });
+        step("Open page", () -> {
+            registrationPage.checkFormNotAppears();
+        });
     }
 }
 
