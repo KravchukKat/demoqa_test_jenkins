@@ -30,6 +30,7 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
                     .setUserNumber(userNumber)
                     .setBirthDay(day, month, year)
                     .setSubjects(subjects)
+                    .scrollToElement()
                     .setHobbies(hobbies)
                     .setPicture(picture)
                     .setAddress(address)
@@ -68,6 +69,7 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
                     .setGender(gender)
                     .setUserNumber(userNumber)
                     .setBirthDay(day, month, year)
+                    .scrollToElement()
                     .setHobbies(hobbies)
                     .setAddress(address)
                     .submit();

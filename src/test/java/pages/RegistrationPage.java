@@ -17,6 +17,7 @@ public class RegistrationPage {
             userNumberInput = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
+            scrollToHobbiesWrapper = $("#hobbiesWrapper"),
             hobbiesWrapper = $("#hobbiesWrapper"),
             uploadPicture = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
@@ -90,6 +91,11 @@ public class RegistrationPage {
     public RegistrationPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
 
+        return this;
+    }
+
+    public RegistrationPage scrollToElement() {
+        scrollToHobbiesWrapper.scrollTo();
         return this;
     }
 
