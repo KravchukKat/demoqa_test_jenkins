@@ -13,7 +13,7 @@ public class RegistrationPage {
     private final SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            genterWrapper = $("#genterWrapper"),
+            genderWrapper = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
@@ -36,10 +36,18 @@ public class RegistrationPage {
     }
 
     public RegistrationPage removeBanners() {
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        executeJavaScript("document.querySelectorAll('#fixedban, footer, iframe').forEach(el => el.remove())");
+        waitUntilIframesGone();
 
         return this;
+    }
+
+    private void waitUntilIframesGone() {
+        for (int i = 0; i < 10; i++) {
+            if ($$("iframe").isEmpty()) break;
+            sleep(500);
+            executeJavaScript("document.querySelectorAll('iframe').forEach(el => el.remove())");
+        }
     }
 
     public RegistrationPage setFirstName(String value) {
@@ -60,8 +68,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setGenter(String value) {
-        genterWrapper.$(byText(value)).click();
+    public RegistrationPage setGender(String value) {
+        genderWrapper.$(byText(value)).click();
 
         return this;
     }

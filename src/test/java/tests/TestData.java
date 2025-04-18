@@ -6,7 +6,7 @@ public class TestData {
     public static String firstName = getRandomFirstName(),
             lastName = getRandomLastName(),
             userEmail = getRandomUserEmail(),
-            genter = getRandomGenter(),
+            gender = getRandomGender(),
             userNumber = getRandomNumberPhone(),
             day = getRandomDateOfBirthDay(),
             month = getRandomDateOfBirthMonth(),
