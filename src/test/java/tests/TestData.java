@@ -13,7 +13,7 @@ public class TestData {
             year = getRandomDateOfBirthYear(),
             subjects = getRandomSubjects(),
             hobbies = getRandomHobbies(),
-            picture = "cat jpg",
+            picture = "cat.jpg",
             address = getRandomAddress(),
             state = getRandomState(),
             city = getRandomCity(state);

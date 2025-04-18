@@ -19,8 +19,8 @@ public class TestBase {
         Configuration.timeout = 5000;
 
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "125.0");
-        Configuration.remote = System.getProperty("remoteUrl", "");
+        Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(

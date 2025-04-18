@@ -43,7 +43,7 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
                     .checkResultValue("Student Email", userEmail)
                     .checkResultValue("Gender", genter)
                     .checkResultValue("Mobile", userNumber)
-                    .checkResultValue("Date of Birth", day + month + year)
+                    .checkResultValue("Date of Birth", day + " " + month + "," + year)
                     .checkResultValue("Subjects", subjects)
                     .checkResultValue("Hobbies", hobbies)
                     .checkResultValue("Picture", picture)
@@ -78,7 +78,7 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
                     .checkResultValue("Student Email", userEmail)
                     .checkResultValue("Gender", genter)
                     .checkResultValue("Mobile", userNumber)
-                    .checkResultValue("Date of Birth", day + month + year)
+                    .checkResultValue("Date of Birth", day + " " + month + "," + year)
                     .checkResultValue("Hobbies", hobbies)
                     .checkResultValue("Address", address);
         });
