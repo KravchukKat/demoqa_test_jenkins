@@ -45,7 +45,7 @@ public class RegistrationPage {
     private void waitUntilIframesGone() {
         for (int i = 0; i < 10; i++) {
             if ($$("iframe").isEmpty()) break;
-            sleep(500);
+            sleep(1000);
             executeJavaScript("document.querySelectorAll('iframe').forEach(el => el.remove())");
         }
     }
