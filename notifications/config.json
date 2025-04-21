@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "MyTestProject",
+    "environment": "qa.guru",
+    "comment": "comment @Kravchuk_Kat",
+    "reportLink": "https://jenkins.autotests.cloud/job/demoqa_test_2/",
+    "language": "en",
+    "allureFolder": "allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "7894494137:AAFdq_3ITER712znvzfctR_b2P0FzRGzURI",
+    "chat": "8106733636",
+    "replyTo": ""
+  }
+}
