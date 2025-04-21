@@ -54,7 +54,7 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("my test")
     @Owner("KravchukK")
     void successRegistrationRequiredFieldsTest() {
 
