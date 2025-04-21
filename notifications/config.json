@@ -1,6 +1,6 @@
 {
   "base": {
-    "project": "MyTestProject",
+    "project": "MyTestsProject",
     "environment": "qa.guru",
     "comment": "comment @Kravchuk_Kat",
     "reportLink": "https://jenkins.autotests.cloud/job/demoqa_test_2/",
