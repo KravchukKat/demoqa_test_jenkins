@@ -14,14 +14,14 @@ import java.util.Map;
 public class TestBase {
 
     @BeforeAll
-    static void setup() {
+    static void setupEnvironment() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 5000;
 
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
-        Configuration.browserSize = System.getProperty("screen_resolution", "1920x1080");
-        Configuration.remote = System.getProperty("browserRemote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.browserVersion = System.getProperty("browser_Version", "128.0");
+        Configuration.browserSize = System.getProperty("browser_Size", "1920x1080");
+        Configuration.remote = System.getProperty("browser_Remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
