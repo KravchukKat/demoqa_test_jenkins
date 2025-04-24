@@ -31,10 +31,23 @@ public class Attach {
     }
 
     public static void browserConsoleLogs() {
-        attachAsText(
-                "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
-        );
+        String logs;
+
+        if (Configuration.browser.equalsIgnoreCase("firefox")) {
+            try {
+                logs = (String) Selenide.executeJavaScript("return window.consoleLogs ? window.consoleLogs.join('\\n') : 'Логи не перехвачены';");
+            } catch (Exception e) {
+                logs = "Не удалось получить логи Firefox: " + e.getMessage();
+            }
+        } else {
+            try {
+                logs = String.join("\n", Selenide.getWebDriverLogs(BROWSER));
+            } catch (Exception e) {
+                logs = "Не удалось получить логи: " + e.getMessage();
+            }
+        }
+
+        attachAsText("Browser console logs", logs);
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
